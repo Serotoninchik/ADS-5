@@ -3,37 +3,35 @@
 
 #include <string>
 
-template<typename T, int Size>
 class TStack {
  private:
-    T data[Size];
-    int t;
+    S data[Size];
+    int s;
 
  public:
-    TStack() : t(0) {}
+    TStack() : s(0) {}
 
-    T pop() {
-        if (t > 0)
+    S pop() {
+        if (s > 0)
             return data[--t];
         else
             throw std::string("empty");
     }
 
-    void push(const T& item) {
-        if (t <= Size - 1)
-            data[t++] = item;
+    void push(const S& item) {
+        if (s <= Size - 1)
+            data[s++] = item;
         else
             throw std::string("full");
     }
 
-
     bool isEmpty() {
-        return t == 0;
+        return s == 0;
     }
 
-    T get() {
+    S get() {
         if (!isEmpty())
-            return data[t - 1];
+            return data[s - 1];
         else
             throw std::string("empty");
     }
