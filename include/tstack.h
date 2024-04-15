@@ -6,7 +6,6 @@
 
 template<typename T, int Size>
 class TStack {
-
  private:
     T data[Size];
     int t;
