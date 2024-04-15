@@ -28,7 +28,6 @@ class TStack {
             throw std::string("full");
     }
 
-
     bool isEmpty() {
         return t == 0;
     }
