@@ -1,3 +1,4 @@
+// Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
 
@@ -39,3 +40,5 @@ class TStack {
             throw std::string("empty");
     }
 };
+
+#endif // INCLUDE_TSTACK_H_
