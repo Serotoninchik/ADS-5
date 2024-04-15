@@ -1,30 +1,41 @@
-template<typename T, int size>
-class TStack {
+#ifndef INCLUDE_TSTACK_H_
+#define INCLUDE_TSTACK_H_
 
+#include <string>
+
+template<typename T, int Size>
+class TStack {
  private:
-    T *arr;
-    int top;
+    T data[Size];
+    int t;
 
  public:
-    TStack(): top(-1) {
-        arr = new T[size];
+    TStack() : t(0) {}
+
+    T pop() {
+        if (t > 0)
+            return data[--t];
+        else
+            throw std::string("empty");
     }
-    T get() const {
-    return arr[top];
+
+    void push(const T& item) {
+        if (t <= Size - 1)
+            data[t++] = item;
+        else
+            throw std::string("full");
     }
-    bool isEmpty() const {
-    return top == -1;
+
+
+    bool isEmpty() {
+        return t == 0;
     }
-    bool isFull() const {
-    return top == size - 1;
-    }
-    void pop() {
-        if (top >= 0)
-            top--;
-    }
-    void push(T item) {
-        if (top < size - 1)
-            arr[++top] = item;
+
+    T get() {
+        if (!isEmpty())
+            return data[t - 1];
+        else
+            throw std::string("empty");
     }
 };
 
