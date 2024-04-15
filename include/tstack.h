@@ -38,5 +38,3 @@ class TStack {
             throw std::string("empty");
     }
 };
-
-#endif // INCLUDE_TSTACK_H_
